@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leetcode Metrics</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="brand">
+            <img src="logo.png" alt="LeetMetric Logo" class="logo">
+            <span class="site-name">LeetMetric</span>
+        </div>
+        <div class="account">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>LeetStats</h1>
+
+        <div class="user-container">
+            <p>Enter your username below:</p>
+            <div class="user-input-container">
+                <input type="text" placeholder="Enter your username here" id="user-input">
+                <span id="clear-input" title="Clear">✖</span>
+                <button id="search-btn">Search</button>
+            </div>
+
+        </div>
+
+        <div class="stats-container">
+
+            <div class="progress">
+                <div class="progress-item circle" id="progress-circle">
+                    <div class="easy-progress">
+                        <span id="easy-label"></span>
+                        <p>Easy</p>
+                    </div>
+                </div>
+
+                <div class="progress-item circle">
+                    <div class="medium-progress">
+                        <span id="medium-label"></span>
+                        <p>Medium</p>
+                    </div>
+                </div>
+
+                <div class="progress-item circle">
+                    <div class="hard-progress">
+                        <span id="hard-label"></span>
+                        <p>Hard</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-cards">
+                <!-- directly populate card here from the js code -->
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
