@@ -285,3 +285,73 @@ h4 {
         text-align: center;
     }
 }
+
+/* Mobile devices between 400px and 1000px */
+@media (max-width: 450px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+    .site-header {
+        width: 100%;
+        left: 50%;
+        padding: 10px 14px;
+        border-radius: 10px;
+        gap: 8px;
+    }
+
+    .site-name {
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        width: 40px;
+        height: 34px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        margin-top: 90px;
+    }
+
+    .user-input-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #user-input {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    #search-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .progress {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .stats-cards {
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+        font-size: 1rem;
+    }
+}
