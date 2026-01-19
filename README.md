@@ -81,8 +81,8 @@ Feedback and suggestions are always welcome!
 This project is open-source. You are free to use, modify, and distribute it.
 
 ## 👤 Author
-- **debug-node**
 
-🌐 [GitHub Profile](https://github.com/debug-node)
+**Aditya Kumar**  
+GitHub: [debug-node](https://github.com/debug-node)
 
 > _“Code. Learn. Build. Repeat.”_ 💻
