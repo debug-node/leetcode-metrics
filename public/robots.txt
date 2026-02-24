@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://leetcode-metrics-swart.vercel.app/sitemap.xml
