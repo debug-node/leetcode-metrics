@@ -12,7 +12,6 @@ LeetCode Metrics is a lightweight full-stack app that fetches and displays LeetC
 - Difficulty-wise solved progress with animated circular charts
 - Submission summary cards (overall + difficulty-wise)
 - Responsive, modern UI (desktop + mobile)
-- SEO-ready metadata (`robots.txt`, `sitemap.xml`, canonical tags)
 
 ## Tech Stack
 
@@ -27,9 +26,12 @@ leetcode-metrics/
 ├── public/
 │   ├── index.html
 │   ├── style.css
+│   ├── styles/
+│   │   ├── base.css
+│   │   ├── layout.css
+│   │   ├── components.css
+│   │   └── responsive.css
 │   ├── script.js
-│   ├── robots.txt
-│   ├── sitemap.xml
 │   ├── logo.png
 │   └── favicon.ico
 ├── server.js
@@ -56,15 +58,11 @@ Open:
 ## Environment Variables
 
 - `PORT` (default: `5000`) — server port
-- `ALLOWED_ORIGIN` (default: `http://localhost:<PORT>`) — allowed CORS origin
-- `NODE_ENV` (`production` or development) — controls static cache behavior
 
 PowerShell example:
 
 ```powershell
 $env:PORT=5001
-$env:ALLOWED_ORIGIN="http://localhost:5001"
-$env:NODE_ENV="development"
 npm start
 ```
 
@@ -83,20 +81,20 @@ Request body:
 Responses:
 
 - `200` user stats payload
-- `400` invalid username
+- `400` username is required
 - `404` user not found
-- `429` rate limit exceeded
-- `504` upstream timeout
 - `500` internal/server or upstream error
 
 ## Security & Reliability
 
-- `helmet` for secure HTTP headers
-- Rate limiting on `/api/*`
-- Strict username validation
-- JSON payload size limit
-- Timeout handling for upstream LeetCode requests
-- Dev cache disabled for instant UI refresh while developing
+- CORS enabled for cross-origin requests
+- Basic request validation for username presence
+- Graceful error handling for upstream LeetCode API failures
+
+## Styling Structure
+
+- `public/style.css` acts as the entry stylesheet.
+- Actual styles are split by concern under `public/styles/` for easier maintenance.
 
 ## Troubleshooting
 
