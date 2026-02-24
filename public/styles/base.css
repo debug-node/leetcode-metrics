@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+	background: radial-gradient(circle at top, #243056 0%, #181f34 45%, #101523 100%);
+	color: #f8fbff;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	padding: 110px 20px 30px;
+}
+
+h1 {
+	font-size: 2rem;
+	text-align: center;
+	color: #f3f7ff;
+	font-weight: 600;
+}
+
+h4 {
+	font-size: 1rem;
+}

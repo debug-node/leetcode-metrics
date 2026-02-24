@@ -1,0 +1,114 @@
+@media (max-width: 720px) {
+	.container {
+		padding: 20px;
+		width: 100%;
+	}
+
+	.site-footer {
+		width: 100%;
+	}
+
+	.site-header {
+		width: calc(100% - 20px);
+		padding: 10px 14px;
+		top: 10px;
+	}
+
+	.progress {
+		justify-content: center;
+	}
+
+	.card {
+		max-width: 100%;
+		flex-basis: 48%;
+	}
+}
+
+@media (max-width: 450px) {
+	body {
+		padding: 90px 10px 16px;
+	}
+
+	.site-header {
+		width: 100%;
+		left: 50%;
+		padding: 10px 14px;
+		border-radius: 10px;
+		gap: 8px;
+	}
+
+	.site-name {
+		font-size: 1.2rem;
+	}
+
+	.logo {
+		width: 40px;
+		height: 34px;
+	}
+
+	.container {
+		width: 100%;
+		max-width: 100%;
+		padding: 16px;
+	}
+
+	.site-footer {
+		padding: 12px;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		font-size: 0.84rem;
+	}
+
+	.footer-links {
+		width: auto;
+		justify-content: center;
+	}
+
+	.hero-subtitle {
+		font-size: 0.9rem;
+	}
+
+	.user-input-container {
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	#user-input {
+		padding: 12px;
+		padding-right: 38px;
+		font-size: 1rem;
+	}
+
+	#clear-input {
+		right: 14px;
+	}
+
+	#search-btn {
+		width: 100%;
+		padding: 12px;
+		font-size: 1rem;
+	}
+
+	.progress {
+		justify-content: center;
+		gap: 20px;
+	}
+
+	.circle {
+		width: 120px;
+		height: 120px;
+	}
+
+	.stats-cards {
+		flex-direction: row;
+		justify-content: center;
+		gap: 12px;
+	}
+
+	.card {
+		width: 100%;
+		max-width: 320px;
+		font-size: 1rem;
+	}
+}
