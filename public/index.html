@@ -1,74 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>LeetCode Metrics - Track LeetCode Stats Online</title>
+		<meta
+			name="description"
+			content="Track LeetCode stats online with difficulty-wise progress, solved counts, and submission analytics. Fast and mobile-friendly LeetCode metrics dashboard." />
+		<meta
+			name="keywords"
+			content="leetcode stats, leetcode metrics, leetcode profile tracker, coding stats, dsa progress tracker" />
+		<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+		<meta name="theme-color" content="#181f34" />
+		<link rel="canonical" href="https://leetcode-metrics-swart.vercel.app/" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leetcode Metrics</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="LeetCode Metrics - Track LeetCode Stats Online" />
+		<meta
+			property="og:description"
+			content="Check LeetCode easy, medium, hard progress and submissions in one clean dashboard." />
+		<meta property="og:url" content="https://leetcode-metrics-swart.vercel.app/" />
+		<meta property="og:site_name" content="LeetCode Metrics" />
 
-    <link rel="stylesheet" href="style.css">
-</head>
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="LeetCode Metrics - Track LeetCode Stats Online" />
+		<meta
+			name="twitter:description"
+			content="Mobile-friendly LeetCode stats dashboard for quick coding progress tracking." />
 
-<body>
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-    <header class="site-header">
-        <div class="brand">
-            <img src="logo.png" alt="LeetMetric Logo" class="logo">
-            <span class="site-name">LeetMetric</span>
-        </div>
-        <div class="account">
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </div>
-    </header>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+		<link rel="stylesheet" href="style.css" />
 
-    <div class="container">
-        <h1>LeetStats</h1>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebSite",
+				"name": "LeetCode Metrics",
+				"url": "https://leetcode-metrics-swart.vercel.app/",
+				"description": "Track LeetCode profile stats with solved problems by difficulty and submission analytics."
+			}
+		</script>
+	</head>
 
-        <div class="user-container">
-            <p>Enter your username below:</p>
-            <div class="user-input-container">
-                <input type="text" placeholder="Enter your username here" id="user-input">
-                <span id="clear-input" title="Clear">✖</span>
-                <button id="search-btn">Search</button>
-            </div>
+	<body>
+		<header class="site-header">
+			<div class="brand">
+				<img src="logo.png" alt="LeetMetric Logo" class="logo" />
+				<span class="site-name">LeetMetric</span>
+			</div>
+			<div class="account">
+				<a href="https://leetcode.com/problemset/" target="_blank" rel="noopener noreferrer"
+					>Explore Problems</a
+				>
+			</div>
+		</header>
 
-        </div>
+		<main class="container">
+			<h1>LeetStats</h1>
+			<p class="hero-subtitle">Track LeetCode progress with live easy, medium, hard and submission stats.</p>
 
-        <div class="stats-container">
+			<div class="user-container">
+				<p>Enter your username below:</p>
+				<div class="user-input-container">
+					<div class="input-field">
+						<input
+							type="text"
+							placeholder="Enter your username here"
+							id="user-input"
+							maxlength="15"
+							autocomplete="off"
+							spellcheck="false"
+							aria-label="LeetCode username" />
+						<span id="clear-input" title="Clear">✖</span>
+					</div>
+					<button id="search-btn" type="button">Search</button>
+				</div>
+				<p id="status-message" class="status-message" aria-live="polite"></p>
+			</div>
 
-            <div class="progress">
-                <div class="progress-item circle" id="progress-circle">
-                    <div class="easy-progress">
-                        <span id="easy-label"></span>
-                        <p>Easy</p>
-                    </div>
-                </div>
+			<div class="stats-container">
+				<div class="progress">
+					<div class="progress-item circle" id="progress-circle">
+						<div class="easy-progress">
+							<span id="easy-label"></span>
+							<p>Easy</p>
+						</div>
+					</div>
 
-                <div class="progress-item circle">
-                    <div class="medium-progress">
-                        <span id="medium-label"></span>
-                        <p>Medium</p>
-                    </div>
-                </div>
+					<div class="progress-item circle">
+						<div class="medium-progress">
+							<span id="medium-label"></span>
+							<p>Medium</p>
+						</div>
+					</div>
 
-                <div class="progress-item circle">
-                    <div class="hard-progress">
-                        <span id="hard-label"></span>
-                        <p>Hard</p>
-                    </div>
-                </div>
-            </div>
+					<div class="progress-item circle">
+						<div class="hard-progress">
+							<span id="hard-label"></span>
+							<p>Hard</p>
+						</div>
+					</div>
+				</div>
 
-            <div class="stats-cards">
-                <!-- directly populate card here from the js code -->
-            </div>
+				<div class="stats-cards">
+					<!-- directly populate card here from the js code -->
+				</div>
+			</div>
+		</main>
 
-        </div>
+		<footer class="site-footer">
+			<p>© 2026 LeetCode Metrics. All rights reserved.</p>
+			<div class="footer-links">
+				<a
+					href="https://www.linkedin.com/in/aditya-kumar-0215942b3/"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="LinkedIn"
+					class="social-link"
+					><i class="bi bi-linkedin"></i
+				></a>
+				<a
+					href="https://github.com/debug-node"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="GitHub"
+					class="social-link"
+					><i class="bi bi-github"></i
+				></a>
+			</div>
+		</footer>
 
-    </div>
-
-    <script src="script.js"></script>
-</body>
-
+		<script src="script.js"></script>
+	</body>
 </html>
