@@ -38,10 +38,17 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
-				"@type": "WebSite",
+				"@type": "WebApplication",
 				"name": "LeetCode Metrics",
 				"url": "https://leetcode-metrics-swart.vercel.app/",
-				"description": "Track LeetCode profile stats with solved problems by difficulty and submission analytics."
+				"description": "Track LeetCode profile stats with solved problems by difficulty and submission analytics.",
+				"applicationCategory": "DeveloperApplication",
+				"operatingSystem": "Web",
+				"offers": {
+					"@type": "Offer",
+					"price": "0",
+					"priceCurrency": "USD"
+				}
 			}
 		</script>
 	</head>
@@ -60,8 +67,10 @@
 		</header>
 
 		<main class="container">
-			<h1>LeetStats</h1>
-			<p class="hero-subtitle">Track LeetCode progress with live easy, medium, hard and submission stats.</p>
+			<h1>LeetCode Metrics</h1>
+			<p class="hero-subtitle">
+				Track LeetCode stats with live easy, medium, hard progress and submission insights.
+			</p>
 
 			<div class="user-container">
 				<p>Enter your username below:</p>
