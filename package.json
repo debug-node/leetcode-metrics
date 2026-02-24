@@ -1,22 +1,24 @@
 {
-  "name": "leetcode-metrics-server",
-  "version": "1.0.0",
-  "description": "A simple Node.js server to fetch LeetCode user stats",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "keywords": [
-    "leetcode",
-    "express",
-    "node"
-  ],
-  "author": "Your Name",
-  "license": "MIT",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "node-fetch": "^2.6.12",
-    "serve-favicon": "^2.5.1"
-  }
+	"name": "leetcode-metrics-server",
+	"version": "1.0.0",
+	"description": "A simple Node.js server to fetch LeetCode user stats",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"keywords": [
+		"leetcode",
+		"express",
+		"node"
+	],
+	"author": "Your Name",
+	"license": "MIT",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"express": "^4.18.2",
+		"express-rate-limit": "^7.4.1",
+		"helmet": "^7.1.0",
+		"node-fetch": "^2.6.12",
+		"serve-favicon": "^2.5.1"
+	}
 }
