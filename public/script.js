@@ -16,12 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	function validateUsername(username) {
-		if (username.trim() === "") {
+		const normalized = username.trim();
+		if (normalized === "") {
 			setStatus("Username should not be empty", "error");
 			return false;
 		}
 		const regex = /^[a-zA-Z0-9_-]{1,15}$/;
-		const isMatching = regex.test(username);
+		const isMatching = regex.test(normalized);
 		if (!isMatching) setStatus("Invalid username format", "error");
 		return isMatching;
 	}
@@ -43,10 +44,18 @@ document.addEventListener("DOMContentLoaded", function () {
 				body: JSON.stringify({ username }),
 			});
 
-			const parsedData = await response.json();
+			let parsedData = null;
+			const contentType = response.headers.get("content-type") || "";
+			if (contentType.includes("application/json")) {
+				parsedData = await response.json();
+			}
 
 			if (!response.ok) {
-				throw new Error(parsedData.error || "Unable to fetch user details");
+				throw new Error(parsedData?.error || "Unable to fetch user details");
+			}
+
+			if (!parsedData) {
+				throw new Error("Unexpected server response");
 			}
 
 			displayUserData(parsedData);
@@ -140,18 +149,21 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	}
 
-	searchButton.addEventListener("click", function () {
+	function handleSearch() {
 		const username = usernameInput.value.trim();
-		if (validateUsername(username)) fetchUserDetails(username);
+		if (validateUsername(username)) {
+			fetchUserDetails(username);
+		}
+	}
+
+	searchButton.addEventListener("click", function () {
+		handleSearch();
 	});
 
 	usernameInput.addEventListener("keydown", function (event) {
 		if (event.key === "Enter") {
 			event.preventDefault();
-			const username = usernameInput.value.trim();
-			if (validateUsername(username)) {
-				fetchUserDetails(username);
-			}
+			handleSearch();
 		}
 	});
 
@@ -159,6 +171,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	usernameInput.addEventListener("input", () => {
 		clearBtn.style.display = usernameInput.value ? "block" : "none";
+		if (statusMessage.classList.contains("error")) {
+			setStatus("", "info");
+		}
 	});
 
 	clearBtn.addEventListener("click", () => {
